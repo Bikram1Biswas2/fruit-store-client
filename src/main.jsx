@@ -6,12 +6,22 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import AddFruit from './Components/AddFruit.jsx';
+import UpdateFruit from './Components/UpdateFruit.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
   },
+  {
+    path:"/addFruit",
+    element:<AddFruit></AddFruit>
+  },
+  {
+    path:"/updateFruit",
+    element:<UpdateFruit></UpdateFruit>
+  }
 ]);
 
 createRoot(document.getElementById('root')).render(
