@@ -1,10 +1,11 @@
 import { Link, useLoaderData } from "react-router-dom";
 import "./App.css";
 import FruitCard from "./Components/FruitCard";
+import { useState } from "react";
 
 function App() {
-  const fruits = useLoaderData()
-  console.log(fruits);
+  const loadedFruits = useLoaderData()
+  const [fruits,setFruits]= useState(loadedFruits)
   return (
     <>
    
@@ -15,7 +16,13 @@ function App() {
     </div>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {
-        fruits.map(fruit=> <FruitCard key={fruits._id} fruit={fruit}></FruitCard>)
+        fruits.map(fruit=> <FruitCard 
+          key={fruits._id} 
+          fruit={fruit}
+          fruits={fruits}
+          setFruits={setFruits}
+          ></FruitCard>
+        )
       }
     </div>
     </>
