@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const FruitCard = ({ fruit,setFruits,fruits }) => {
@@ -45,7 +46,7 @@ const FruitCard = ({ fruit,setFruits,fruits }) => {
         <p>Price:{price}</p>
         <p>From:{location}</p>
         <div className="card-actions">
-          <button className="btn btn-secondary">Update</button>
+          <Link to={`/updateFruit/${_id}`} className="btn btn-secondary">Update</Link>
           <button
             onClick={() => handleDelete(_id)}
             className="btn btn-secondary"

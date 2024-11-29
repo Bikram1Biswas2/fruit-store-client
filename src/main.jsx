@@ -20,8 +20,9 @@ const router = createBrowserRouter([
     element:<AddFruit></AddFruit>
   },
   {
-    path:"/updateFruit",
-    element:<UpdateFruit></UpdateFruit>
+    path:"/updateFruit/:id",
+    element:<UpdateFruit></UpdateFruit>,
+    loader:({params})=> fetch(`http://localhost:5000/fruits/${params.id}`)
   }
 ]);
 
